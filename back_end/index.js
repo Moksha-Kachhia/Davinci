@@ -11,14 +11,16 @@ app.get('/index.html', function (req, res) {
  
 app.get('/select_type',  function (req, res) {
  
-   // 输出 JSON 格式
    var response = {
        "sex":req.query.sex,
        "season":req.query.season
    };
-   console.log(req);
+
    res.end(JSON.stringify(response));
 })
+app.get('/search_result', function(req,res,next){
+   
+});
  
 var server = app.listen(8081, function () {
  

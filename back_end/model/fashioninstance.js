@@ -7,6 +7,7 @@ const clothcombinstance=new Schema({
     sex:String,
     type:String,
     name:String,
+    clothid: { type: Schema.ObjectId, ref: "clothId", required: true },
     cloth:[{"pic_url":String,"url":String}],
     clothname:[String],
     comb_pic_url:String

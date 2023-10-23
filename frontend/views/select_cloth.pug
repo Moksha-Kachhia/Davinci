@@ -1,11 +1,11 @@
 extends layout
 
 block content    
-    h1 #{cloth_list.name} 
+    h1 #{title} 
         ul
-        each item in cloth_list 
+        each item in fashioninstance. 
             li 
                 img(src=item.pic_url, style='width:100px;height:100px;')
-                a(href=item.url) shopping here!
+                a(href=item.shopping_url) shopping here!
         else
-            li There are no books.
+            li There are no cloth.

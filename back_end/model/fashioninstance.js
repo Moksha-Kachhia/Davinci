@@ -5,18 +5,12 @@ const Schema = mongoose.Schema;
 const clothcombinstance=new Schema({
     season:String,
     sex:String,
-    type:String,
+    style:String,
     name:String,
-    clothid: { type: Schema.ObjectId, ref: "clothId", required: true },
-    cloth:[{"pic_url":String,"url":String}],
-    clothname:[String],
+    clothid:[{ type: Schema.ObjectId, ref: "Clothinstance", required: true }] ,
     comb_pic_url:String
 })
-module.exports = mongoose.model("fashionInstance", clothcombinstance);
 BookInstanceSchema.virtual("url").get(function () {
-    return  this.comb_pic_url;
+    return  "/catalog/fashion"+this._id;
   });
-BookInstanceSchema.virtual("clothes").get(function(){
-    return this.cloth;
-}
-);
+module.exports = mongoose.model("fashionInstance", clothcombinstance);

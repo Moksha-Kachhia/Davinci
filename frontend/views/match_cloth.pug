@@ -1,0 +1,9 @@
+extends layout
+
+block content
+  h1= title
+
+  form(method='POST' action='')
+    div.form-group
+      label(for='title') Cloth:
+      input#title.form-control(type='text', placeholder='your cloth' name='title' required='true' value=(undefined===cloth ? '' : cloth.name) )

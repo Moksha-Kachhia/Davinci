@@ -1,0 +1,10 @@
+extends layout
+
+block content
+
+  h1 title 
+  dl
+    each instance in fashioninstance
+    dt 
+        a(href=instance.url) #{instance.name} 
+    dd #{instance.sex} #{instance.season}#{instance.style}

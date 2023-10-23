@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-
+const mongooseTypeUrl=require('mongoose-type-url');
 const Schema = mongoose.Schema;
 
 const clothcombinstance=new Schema({
@@ -8,9 +8,9 @@ const clothcombinstance=new Schema({
     style:String,
     name:String,
     clothid:[{ type: Schema.ObjectId, ref: "Clothinstance", required: true }] ,
-    comb_pic_url:String
+    comb_pic_url:mmongooseTypeUrl,
 })
-BookInstanceSchema.virtual("url").get(function () {
+clothcombinstance.virtual("url").get(function () {
     return  "/catalog/fashion"+this._id;
   });
 module.exports = mongoose.model("fashionInstance", clothcombinstance);

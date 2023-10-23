@@ -13,6 +13,7 @@
     "mongodb": "^6.1.0",
     "mongoose": "^7.6.3",
     "mongoose-fuzzy-searching": "^2.0.2",
+    "mongoose-type-url": "^2.1.0",
     "pug": "^3.0.2"
   }
 }

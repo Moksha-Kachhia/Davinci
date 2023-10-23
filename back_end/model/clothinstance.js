@@ -1,15 +1,14 @@
 const mongoose = require("mongoose");
-
+const type_url=require('mongoose-type-url');
 const Schema = mongoose.Schema;
 const mongoose_fuzzy_searching = require('mongoose-fuzzy-searching');
 const clothinstance=new Schema({
-    pic_url:String,
-    shopping_url:String,
+    pic_url:type_url,
+    shopping_url:type_url,
     name:String,
     fashionid:[{ type: Schema.ObjectId, ref: "fashioninstance", required: false}]
 })
-clothinstance.plugin(timestamps);
-BookInstanceSchema.virtual("url").get(function () {
+clothinstance.virtual("url").get(function () {
     return "/catalog/cloth/"+this._id; 
   });
 

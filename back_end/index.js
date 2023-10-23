@@ -5,7 +5,7 @@ var urlencodedParser = bodyParser.urlencoded({ extended: false })
 app.set('views',path.join(__dirname,'../frontend/views') )
 app.set('view engine', 'pug').
 app.use('/public', express.static('public'));
-
+const catalogRouter = require("./router/catalog"); 
 const mongoDB = process.env.MONGODB_URI || dev_db_url;
 
 main().catch((err) => console.log(err));
@@ -29,6 +29,7 @@ app.get('/select_type',  function (req, res) {
 app.get('/search_result', function(req,res,next){
    
 });
+app.use("/catalog", catalogRouter);
  
 var server = app.listen(8081, function () {
  

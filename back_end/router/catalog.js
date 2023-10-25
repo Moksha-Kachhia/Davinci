@@ -4,4 +4,4 @@ const fashion_instance_controller = require("../controllers/fashioninstancecontr
 const Clothinstance=require("../controller/clothinstancecontroller");
 router.get("/cloth/:id",Clothinstance.clothinstance_detail);
 router.get("/cloth/get",Clothinstance.clothinstancebyname_detail);
-
+router.get("")

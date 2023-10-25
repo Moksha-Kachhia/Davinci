@@ -3,14 +3,14 @@ const mongooseTypeUrl=require('mongoose-type-url');
 const Schema = mongoose.Schema;
 
 const clothcombinstance=new Schema({
-    season:String,
-    sex:String,
-    style:String,
-    name:String,
+    season:{type:String,required:true},
+    sex:{ type: String, required: true },
+    style:{ type: String, required: true },
+    name:{ type: String, required: true },
     clothid:[{ type: Schema.ObjectId, ref: "Clothinstance", required: true }] ,
-    comb_pic_url:mmongooseTypeUrl,
+    comb_pic_url:mongooseTypeUrl,
 })
 clothcombinstance.virtual("url").get(function () {
-    return  "/catalog/fashion"+this._id;
+    return  "/fashion/"+this._id;
   });
-module.exports = mongoose.model("fashionInstance", clothcombinstance);
+module.exports = mongoose.model("FashionInstances", clothcombinstance);

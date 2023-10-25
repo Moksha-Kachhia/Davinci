@@ -1,10 +1,8 @@
-extends layout
 
 block content
 
-  h1 title 
-  dl
-    each instance in fashioninstance
-    dt 
+  h1 #{title }
+  ul
+    each instance in fashioninstances
+      li
         a(href=instance.url) #{instance.name} 
-    dd #{instance.sex} #{instance.season}#{instance.style}

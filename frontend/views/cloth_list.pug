@@ -1,0 +1,10 @@
+//extends layout
+
+block content
+
+  h1 #{title }
+  dl
+    each instance in clothinstances
+      dt #{instance.name} 
+      a(href=instance.url) view here.
+

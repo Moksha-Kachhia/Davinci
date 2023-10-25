@@ -1,9 +1,8 @@
-const FashionInstance = require("../models/clothinstance");
-const { body, validationResult } = require("express-validator");
+const Clothinstance = require("../model/clothinstance");
 const asyncHandler = require("express-async-handler");
 //this is used for get clothinstance matching clothId from our database`
 exports.clothinstance_detail = asyncHandler(async (req, res, next) => {
-    const clothInstance = await ClothInstance.findById(req.params.id).exec();
+    const clothInstance = await Clothinstance.findById(req.params.id).exec();
   
     if (clothInstance === null) {
       // No results.
@@ -20,7 +19,7 @@ exports.clothinstance_detail = asyncHandler(async (req, res, next) => {
 
 
 exports.clothinstancebyname_detail = asyncHandler(async (req, res, next) => {
-    const clothInstances = await ClothInstance.fuzzySearch(req.name).exec();
+    const clothInstances = await Clothinstance.fuzzySearch(req.query.name).exec();
   
     if (clothInstances === null) {
       // No results.

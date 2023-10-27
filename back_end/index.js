@@ -20,11 +20,15 @@ async function main() {
 //       // note: collection.remove() has been depreceated.        
 //       await collection.deleteOne(); 
 //  }
-//  insert_cloth.run_insert_data();
+  insert_cloth.run_insert_data();
 }
 
 const fashion_instance =require("./controller/fashioninstancecontroller")
 const cloth_instance =require("./controller/clothinstancecontroller")
+
+app.get('/', function (req, res) {
+   res.sendFile("index.html",{root: __dirname+ "/../frontend/" });
+})
 app.get('/query_clothcombination.html', function (req, res) {
    res.sendFile("select.html",{root: __dirname+ "/../frontend/" });
 })

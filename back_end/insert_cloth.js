@@ -51,8 +51,19 @@ async function createcloth(){
     2,
       "https://images.canadagoose.com/image/upload//v1694192197/product-image/4821W_61_o.png" ,
       "https://www.canadagoose.com/ca/en/garnet-puffer-4821W.html","downjacket2"
+  ),
+  clothCreate(
+    3,
+    "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/96b24ebd-aeb7-4d38-8d79-915ed38b33da/sportswear-tech-fleece-og-loose-cape-dgKpCv.png",
+    "https://www.nike.com/ca/t/sportswear-tech-fleece-og-loose-cape-dgKpCv/FN4164-063","Nike Sportswear Tech Fleece OG",
+  ),
+  clothCreate(
+    4,
+    "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/15402edd-f7c9-4a0a-9e9b-4ed159cc16a1/sportswear-phoenix-fleece-high-waisted-oversized-tracksuit-bottoms-gQHSKp.png",
+    "https://www.nike.com/ca/t/sportswear-phoenix-fleece-high-waisted-oversized-tracksuit-bottoms-gQHSKp/DV4919-063","Nike Sportswear Phoenix Fleece"
   )
   ]);
+  
 }
 async function createfashion(){
   console.log("create fashion");
@@ -82,6 +93,12 @@ async function createfashion(){
     "canada_goosejacket2",
     "https://images.canadagoose.com/image/upload//product-image/4821W_61_fsph.jpg",
     [clothinstances[2]]
+  ),
+  fashionCreate(
+    3,
+    "autumn","casual","woman","nike sports",
+    "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/8c7b0568-997f-48a6-b392-62ac510806a0/sportswear-tech-fleece-og-loose-cape-dgKpCv.png",
+    [clothinstances[3],clothinstances[4]]
   )
   ]);
 }
@@ -94,4 +111,6 @@ exports.run_insert_data=async function(){
   Clothinstance.findByIdAndUpdate(clothinstances[0],{fashionid:[fashions[0]]});
   Clothinstance.findByIdAndUpdate(clothinstances[2],{fashionid:[fashions[2]]});
   Clothinstance.findByIdAndUpdate(clothinstances[1],{fashionid:[fashions[1]]});
+  Clothinstance.findByIdAndUpdate(clothinstances[3],{fashionid:[fashions[4]]});
+  Clothinstance.findByIdAndUpdate(clothinstances[3],{fashionid:[fashions[3]]});
 }

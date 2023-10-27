@@ -3,11 +3,11 @@ This project is a website which allows users to find clothing items to pair with
 When using the website
 go to the Davinci module
 type
-'''
+```
 npm install --legacy-peer-deps
-'''
+```
 then go to the back_end module
 and type
-'''
+```
 node index.js
-'''
+```

@@ -1,8 +1,29 @@
-
 block content
 
-  h1 #{title }
+  style.
+    h1 {
+      font-size: 90px;
+      color: #366;
+    }
+    ul {
+      list-style: keygen;
+      margin: 0;
+      padding: 0;
+      font: 60px Arial, calibri, sans-serif;
+    }
+    li {
+      margin-bottom: 10px;
+    }
+    a {
+      color: #007bff;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+
+  h1 #{title}
   ul
     each instance in fashioninstances
       li
-        a(href=instance.url) #{instance.name} 
+        a(href=instance.url) #{instance.name}

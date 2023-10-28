@@ -47,7 +47,7 @@ exports.fashioninstancebycloth = asyncHandler(async (req, res, next) => {
     }
   
     res.render("select_fashion_instance_byid", {
-      title: "related fashion combination",
+      title: "These matched fashion style",
       fashioninstances: fashionInstances,
     });
   });

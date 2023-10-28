@@ -9,7 +9,7 @@ const uri =
       "mongodb+srv://qishenchen:PkviUPwMmfTFQVEP@cluster0.ddrhrj1.mongodb.net/?retryWrites=true&w=majority"
 const mongoDB = process.env.MONGODB_URI || uri;
 const mongoose = require("mongoose");
-mongoose.set("strictQuery", false);
+mongoose.set("strictQuery", false)//;
 const insert_cloth=require("./insert_cloth")
 main().catch((err) => console.log(err));
 
@@ -20,7 +20,7 @@ async function main() {
 //       // note: collection.remove() has been depreceated.        
 //       await collection.deleteOne(); 
 //  }
-  insert_cloth.run_insert_data();
+  //insert_cloth.run_insert_data();
 }
 
 const fashion_instance =require("./controller/fashioninstancecontroller")
